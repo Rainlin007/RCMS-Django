@@ -160,6 +160,7 @@ CORS_ALLOW_CREDENTIALS = True
 CORS_ORIGIN_ALLOW_ALL = True
 CORS_ORIGIN_WHITELIST = (
     'http://localhost:3000',  # 凡是出现在白名单中的域名，都可以访问后端接口
+    'http://127.0.0.1:3000'
 )
 
 CORS_ALLOW_METHODS = (

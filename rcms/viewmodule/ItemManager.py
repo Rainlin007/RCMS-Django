@@ -29,6 +29,11 @@ def create_item(request: HttpRequest):
         except:
             return response(-1, 'json load error')
         path = body.get('path')
+        path = path.replace(" ", "")
+        if len(path) == 0:
+            return response(-1, 'path error!')
+        if path[0] != '/':
+            path = "/" + path
         comment = body.get('comment')
         value = body.get('value')
         project_id = body.get("project_id")
@@ -52,7 +57,14 @@ def update_item(request: HttpRequest):
             item = Item.objects.get(id=body.get('id'))
         except ObjectDoesNotExist:
             return response(404, 'item not exist')
-        item.path = body.get("path")
+
+        path = body.get("path")
+        path = path.replace(" ", "")
+        if len(path) == 0:
+            return response(-1, 'path error!')
+        if path[0] != '/':
+            path = "/" + path
+        item.path = path
         item.comment = body.get("comment")
         item.value = body.get("value")
         item.save()
