@@ -1,8 +1,8 @@
 Django
 requests
 django_crontab
-pymysql
-mysqlclient
 django-cors-headers
 gunicorn
 gevent
+pymysql
+mysqlclient
