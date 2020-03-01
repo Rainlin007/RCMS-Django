@@ -103,21 +103,21 @@ CACHES = {
 #     }
 # }
 
-# DATABASES = {
-#     'default': {
-#         'ENGINE': 'django.db.backends.mysql',
-#         'NAME': 'my_database_name_prod' if prod else 'my_database_name_debug',
-#         'USER': 'my_user_prod' if prod else 'my_user_debug',
-#         'HOST': 'my_host_prod' if prod else 'my_host_debug',
-#         'PASSWORD': 'my_password_prod' if prod else 'my_password_debug',
-#         'PORT': 'my_port_prod' if prod else 'my_port_debug',
-#         'OPTIONS': {
-#             'charset': 'utf8mb4',
-#             'isolation_level': "repeatable read"
-#         },
-#         'CONN_MAX_AGE': 90
-#     }
-# }
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'my_database_name_prod' if prod else 'my_database_name_debug',
+        'USER': 'my_user_prod' if prod else 'my_user_debug',
+        'HOST': 'my_host_prod' if prod else 'my_host_debug',
+        'PASSWORD': 'my_password_prod' if prod else 'my_password_debug',
+        'PORT': 'my_port_prod' if prod else 'my_port_debug',
+        'OPTIONS': {
+            'charset': 'utf8mb4',
+            'isolation_level': "repeatable read"
+        },
+        'CONN_MAX_AGE': 90
+    }
+}
 
 # Password validation
 # https://docs.djangoproject.com/en/2.2/ref/settings/#auth-password-validators
