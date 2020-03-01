@@ -102,15 +102,14 @@ CACHES = {
 #     }
 # }
 
-
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': 'django',
         'USER': 'root',
-        'PASSWORD': 'xxxxxx',
-        'HOST': 'xxxxx' if prod else 'xxxxxx',
-        'PORT': '3306' if prod else '3306',
+        'HOST': 'my_host_debug' if prod else 'my_host_prod',
+        'PASSWORD': 'my_password_debug' if prod else 'my_password_prod',
+        'PORT': 'my_port_debug' if prod else 'my_port_prod',
         'OPTIONS': {
             'charset': 'utf8mb4'
         }
