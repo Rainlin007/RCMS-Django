@@ -105,14 +105,16 @@ CACHES = {
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'django',
-        'USER': 'root',
+        'NAME': 'my_database_name_debug' if prod else 'my_database_name_prod',
+        'USER': 'my_user_debug' if prod else 'my_user_prod',
         'HOST': 'my_host_debug' if prod else 'my_host_prod',
         'PASSWORD': 'my_password_debug' if prod else 'my_password_prod',
         'PORT': 'my_port_debug' if prod else 'my_port_prod',
         'OPTIONS': {
-            'charset': 'utf8mb4'
-        }
+            'charset': 'utf8mb4',
+            'isolation_level': "repeatable read"
+        },
+        'CONN_MAX_AGE': 90
     }
 }
 
